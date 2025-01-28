@@ -1,0 +1,1 @@
+# pre-commit-localization-hooks
