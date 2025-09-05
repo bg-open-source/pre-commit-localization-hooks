@@ -53,7 +53,7 @@ def load_py(filenames: list[Path]) -> set[str]:
 
         for node in content.body:
             if isinstance(node, ast.ClassDef):
-                errors.extend(enum_field.value.value for enum_field in node.body)
+                errors.extend(enum_field.value.args[0].value for enum_field in node.body)
 
     if len(errors) != len(set(errors)):
         raise Exception(f"Error messages are not unique.\n")
